@@ -1,34 +1,18 @@
-let who = ["The dog", "My grandma", "The mailman", "My bird"];
-let action = ["ate", "peed on", "crushed", "broke"];
-let what = ["my homework", "my phone", "the car"];
-let when = [
-  "before the class",
-  "when I was sleeping",
-  "while I was exercising",
-  "during my lunch",
-  "while I was praying",
-];
+const generatedExcuse = () => {
+  const who = ["The dog", "My grandma", "The mailman", "My bird"];
+  const action = ["ate", "peed on", "crushed", "broke"];
+  const what = ["my homework", "my phone", "the car"];
+  const when = ["before the class","when I was sleeping","while I was exercising","during my lunch","while I was praying"];
 
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
+  const whoIndex = Math.floor(Math.random() * who.length);
+  const actionIndex = Math.floor(Math.random() * action.length);
+  const whatIndex = Math.floor(Math.random() * what.length);
+  const whenIndex = Math.floor(Math.random() * when.length);
 
-function getRandom(anyArray) {
-  let max = anyArray.length - 1;
-  let min = 0;
-  let random = getRandomNumber(min, max);
-  return anyArray[random];
-}
+  return `${who[whoIndex]} ${action[actionIndex]} ${what[whatIndex]} ${when[whenIndex]}`;
+};
 
 window.onload = function() {
-  console.log("Hello World");
-  //write your code here
-  document.body.innerHTML =
-    getRandom(who) +
-    " " +
-    getRandom(action) +
-    " " +
-    getRandom(what) +
-    " " +
-    getRandom(when);
+  console.log(generatedExcuse());
+  document.body.innerHTML = generatedExcuse();
 };
