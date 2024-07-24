@@ -2,7 +2,13 @@ const generatedExcuse = () => {
   const who = ["The dog", "My grandma", "The mailman", "My bird"];
   const action = ["ate", "peed on", "crushed", "broke"];
   const what = ["my homework", "my phone", "the car"];
-  const when = ["before the class","when I was sleeping","while I was exercising","during my lunch","while I was praying"];
+  const when = [
+    "before the class",
+    "when I was sleeping",
+    "while I was exercising",
+    "during my lunch",
+    "while I was praying",
+  ];
 
   const whoIndex = Math.floor(Math.random() * who.length);
   const actionIndex = Math.floor(Math.random() * action.length);
@@ -13,6 +19,7 @@ const generatedExcuse = () => {
 };
 
 window.onload = function() {
-  console.log(generatedExcuse());
-  document.body.innerHTML = generatedExcuse();
+  const excuse = generatedExcuse();
+  console.log(excuse);
+  document.body.innerHTML = excuse;
 };
